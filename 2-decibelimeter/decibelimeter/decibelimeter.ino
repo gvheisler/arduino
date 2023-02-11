@@ -1,21 +1,28 @@
- 
-int pinSom = A0; 
-long soma = 0 ;
-int media;
+int pin1 = A0; 
+int pin2 = A1; 
+int pin3 = A2; 
+int pin4 = A3;
+int maior = 0;
  
 void setup ()  
 {   
-  pinMode (pinSom, INPUT);  
+  pinMode (pin1, INPUT);
+  pinMode (pin2, INPUT);
+  pinMode (pin3, INPUT);
+  pinMode (pin4, INPUT);
   Serial.begin (9600); 
 }  
    
-void loop (){  
-  for ( int i = 0 ; i <1000; i ++){
-    soma = soma + analogRead(pinSom);
-    delay(1);
-  }
-  media = soma / 1000;
-  Serial.print("Sound Level: ");
-  Serial.println (media);  
-  soma = 0 ;
+void loop (){
+  Serial.print(" | ");
+  Serial.print (analogRead(pin1));
+  Serial.print(" | ");
+  Serial.print (analogRead(pin2));
+  Serial.print(" | ");
+  Serial.print (analogRead(pin3)); 
+  Serial.print(" | ");
+  Serial.print (analogRead(pin4));
+  Serial.print(" | ");
+  Serial.print("\n");
+  //delay(1000);
 }
